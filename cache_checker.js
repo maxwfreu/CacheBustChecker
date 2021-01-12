@@ -28,9 +28,16 @@ const readGitDiff = () => {
       module.chunks.forEach(chunk => {
         addToImports(chunks[chunk].names[0], strippedChangedFilePath)
       })
+    } else if (strippedChangedFilePath.endsWith('.js')) {
+      // TODO: Handle javascript files outside of webpack bundle
+      // Example: onboardingTour.js
     }
   });
 };
 
 readGitDiff();
 ph.printResults(importsFound);
+
+// TODO: Automatically cache bust stuff for you
+// TODO: Configure to run on commit hook ?
+// TODO: Run as part of travis build ?

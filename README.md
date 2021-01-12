@@ -8,5 +8,5 @@ npm i
 ## Running the script
 
 ```
-sh cache_checker.sh -d ~/Workspace/KingStreetLabs
+sh cache_checker.sh -d ~/path/to/your/project
 ```
