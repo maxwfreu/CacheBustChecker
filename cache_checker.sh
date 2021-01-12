@@ -15,7 +15,6 @@ WORKING_DIR=`eval "pwd"`
 # Set variables
 diff_file_name='cache_bust_test_git_diff.txt'
 diff_file_path="$WORKING_DIR/$diff_file_name"
-# current_commit=`eval "git rev-parse HEAD"`
 
 echo "Generating git diff..."
 eval "cd $ksl_dir" 
