@@ -1,0 +1,3 @@
+[submodule "whybundled"]
+	path = whybundled
+	url = https://github.com/maxwfreu/whybundled
