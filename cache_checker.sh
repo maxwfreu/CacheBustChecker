@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# USAGE: sh cache_checker.sh -d ~/Workspace/KingStreetLabs
+# USAGE: sh cache_checker.sh -d ~/path/to/your/project
 
 while getopts d: flag
 do
