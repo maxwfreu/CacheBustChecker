@@ -2,6 +2,8 @@
 
 ```
 git clone --recurse-submodules https://github.com/maxwfreu/CacheBustChecker.git
+cd CacheBustChecker
+npm i
 cd whybundled
 npm i
 ```
