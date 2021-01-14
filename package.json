@@ -1,0 +1,22 @@
+{
+  "name": "cachebustchecker",
+  "version": "1.0.0",
+  "description": "``` git clone --recurse-submodules https://github.com/maxwfreu/CacheBustChecker.git cd whybundled npm i ```",
+  "main": "cache_checker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwfreu/CacheBustChecker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxwfreu/CacheBustChecker/issues"
+  },
+  "homepage": "https://github.com/maxwfreu/CacheBustChecker#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}

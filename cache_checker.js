@@ -5,6 +5,7 @@ const { whybundled } = require("./whybundled/cli");
 
 const gitDiffFilename = process.argv[2];
 const importsFound = {};
+const nonWebpackImportsFound = {};
 
 const ph = new PrintHelper();
 
@@ -13,6 +14,14 @@ const addToImports = (key, filename) => {
     importsFound[key].push(filename);
   } else {
     importsFound[key] = [filename];
+  }
+};
+
+const addToNonWebpackImports = (key, filename) => {
+  if (nonWebpackImportsFound[key]) {
+    nonWebpackImportsFound[key].push(filename);
+  } else {
+    nonWebpackImportsFound[key] = [filename];
   }
 };
 
@@ -29,15 +38,10 @@ const readGitDiff = () => {
         addToImports(chunks[chunk].names[0], strippedChangedFilePath)
       })
     } else if (strippedChangedFilePath.endsWith('.js')) {
-      // TODO: Handle javascript files outside of webpack bundle
-      // Example: onboardingTour.js
+      addToNonWebpackImports(strippedChangedFilePath, strippedChangedFilePath)
     }
   });
 };
 
 readGitDiff();
-ph.printResults(importsFound);
-
-// TODO: Automatically cache bust stuff for you
-// TODO: Configure to run on commit hook ?
-// TODO: Run as part of travis build ?
+ph.printResults(importsFound, nonWebpackImportsFound);
