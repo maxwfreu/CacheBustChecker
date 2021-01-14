@@ -53,6 +53,7 @@ class PrintHelper {
   }
 
   printResults(importsFound, nonWebpackImportsFound) {
+    console.log('\n')
     if (Object.keys(importsFound).length === 0 && Object.keys(nonWebpackImportsFound).length === 0) {
       this.printOK();
     } else {
